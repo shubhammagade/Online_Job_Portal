@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Generator</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="resume.css">
+</head>
+<body>
+
+
+    <!-- resume form -->
+    <div class="container-fluid" id="resume-form">
+    <h1 class="text-center my-3">Resume Generator</h1>
+    <p class="text-center">Create Your Resume</p><hr>
+    
+    
+    
+    <!-- Personal Details -->
+
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Personal Details</h3>
+
+            <div class="form-group mt-2">
+                <label for="namefield">Your Name</label>
+                <input type="text" id="namefield" placeholder="Enter your name" class="form-control">
+            </div>
+            <div class="form-group mt-2">
+                <label for="contactfield">Your Contact</label>
+                <input type="text" id="contactfield" placeholder="Enter your Contact" class="form-control" >
+            </div>
+            <div class="form-group mt-2">
+                <label for="addressfield">Your Address</label>
+                <textarea  id="addressfield" placeholder="Enter your address" class="form-control" rows="5"></textarea>
+            </div>
+
+            <div class="form-group mt-3">
+                <label for="">Select Profile Picture</label>
+                <input id="imgfield" type="file" class="form-control">
+            </div>
+
+
+
+            <p class="text-secondary my-3">Important Links</p>
+            <div class="form-group mt-2">
+                <label for="fbfield">Facebook</label>
+                <input type="text" id="fbfield" placeholder="Enter your Facebook Link" class="form-control" >
+            </div>
+            <div class="form-group mt-2">
+                <label for="instafield">Instagram</label>
+                <input type="text" id="instafield" placeholder="Enter your Instagram Link" class="form-control" >
+            </div>
+            <div class="form-group mt-2">
+                <label for="linkdinfield">Linkdin</label>
+                <input type="text" id="linkdinfield" placeholder="Enter your Linkdin Link" class="form-control" >
+            </div>
+        </div>
+
+
+
+        <!-- Professional Details -->
+        <div class="col-md-6">
+            <h3>Professional Details</h3>
+            
+            <div class="form-group mt-2">
+                <label for="">Objective</label>
+                <textarea id="objectivefield" rows="3" placeholder="Enter your Objective" class="form-control"></textarea>
+            </div>
+
+
+            <div class="form-group mt-2" id="we">
+                <label for="">Work Experience</label>
+                <textarea rows="2" placeholder="Enter your Experience" class="form-control wefield"></textarea>
+
+                <div class="container text-center mt-2" id="weAddButton">
+                    <button onclick="addnewWEField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+
+
+            <div class="form-group mt-2" id="eq">
+                <label for="">Academic Qualification</label>
+                <textarea rows="2" placeholder="Enter your Qualification" class="form-control eqfield"></textarea>
+
+                <div class="container text-center mt-2" id="eqAddButton">
+                    <button onclick="addnewEQField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+            <div class="form-group mt-2" id="skill">
+                <label for="">Skills</label>
+                <textarea rows="2" placeholder="Enter your skills" class="form-control skillfield"></textarea>
+
+                <div class="container text-center mt-2" id="skillAddButton">
+                    <button onclick="addnewSKILLField()" class="btn btn-primary btn-sm">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container text-center mt-3">
+        <button onclick="generateResume()" class="btn btn-primary btn-lg">Generate Resume</button>
+    </div>
+    </div>
+            <!-- template -->
+
+    <div class="container" id="resume-template">
+
+        <div class="row">
+
+            <div class="col-md-4 py-5 text-center background">
+                <!-- first column -->
+
+                <img src="profile.png" alt="Profile Photo" class="img-fluid myimg" id="imgT">
+
+                <div class="container">
+                    <p id="nameT1">Chaitanya Somwanshi</p>
+                    <p id="contactT">+91-9021062904</p>
+                    <p id="addressT">D Y Patil Akurdi Pune </p>
+                    <hr>
+
+                    <p><a id="fbT" href="#">https://www.facebook.com/chaitanyasomwanshi</a></p>
+                    <p><a id="instaT" href="#">https://www.instagram.com/chaitanya_0804</a></p>
+                    <p><a id="linkedT" href="#">https://www.linkdin.com/chaitanyasomwanshi</a></p>
+
+                </div>
+
+            </div>
+            <div class="col-md-8 py-5">
+                <!-- second column -->
+                <h1 id="nameT2" class="text-center" style="font-weight: 900;">Chaitanya Somwanshi</h1>
+
+                <!-- objective card -->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam nihil voluptatibus, obcaecati illo, totam quo pariatur asperiores similique odit ex laboriosam iste praesentium repudiandae consectetur recusandae sapiente laudantium explicabo. Illum?</p>
+                    </div>
+                </div>
+
+
+                <!-- Work Experience -->
+
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Work Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="weT">
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+
+                <!-- Academic Qualification -->
+
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Academic Qualifications</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="eqT">
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Skills -->
+
+                <div class="card mt-4">
+                    <div class="card-header background">
+                        <h3>Skills</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="skillT">
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+                            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iusto, autem?</li>
+
+                        </ul>
+                    </div>
+                </div>
+
+
+                <!-- Print Button -->
+
+                <div class="container mt-3 text-center">
+                        <button onclick="printResume()" class="btn background">
+                            Print Resume
+                        </button>
+                    
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="resume.js"></script>
+</body>
+</html>
